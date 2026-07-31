@@ -1,0 +1,44 @@
+# Oddcast
+
+> Oddcast is a New York-based creative media technology company building speaking-character, avatar, and text-to-speech products. For developers it operates two API-driven products: Vocalware (cloud text-to-speech via HTTP/REST and JavaScript/HTML5 APIs, hundreds of voices in 30+ languages) and SitePal (an AI avatar platform embedded and controlled through a JavaScript VHost API).
+
+## APIs
+
+- [Vocalware Text-to-Speech API](https://www.vocalware.com): pay-as-you-go cloud TTS; HTTP/REST for mobile/standalone/server apps and JavaScript/HTML5 for browsers.
+- [SitePal Avatar API](https://www.sitepal.com): embeddable AI avatars controlled at runtime via a JavaScript (VHost) API (sayText, sayAudio, sayAI, stopSpeech, setStatus, setFacialExpression, setBackground).
+
+## Docs
+
+- [Vocalware API Reference](https://www.vocalware.com/support/reference)
+- [Vocalware JavaScript How-tos](https://www.vocalware.com/support/javascript)
+- [Vocalware FAQ](https://www.vocalware.com/support/faq)
+- [SitePal Implementation Guide](https://www.sitepal.com/guide)
+- [SitePal API Examples](https://www.sitepal.com/api/examples/)
+
+## Artifacts
+
+- [Authentication profile](authentication/oddcast-authentication.yml)
+- [API conventions](conventions/oddcast-conventions.yml)
+- [Embedded components](components/oddcast-components.yml)
+- [Domain security](security/oddcast-domain-security.yml)
+
+## Getting started
+
+- [SitePal guide](https://www.sitepal.com/guide)
+- [Vocalware sign up (15-day free trial, 1,000 streams)](https://www.vocalware.com/auth/signup)
+
+## Pricing
+
+- [Vocalware pricing (pay-as-you-go per audio stream)](https://www.vocalware.com/index/pricing)
+- [SitePal pricing](https://www.sitepal.com/pricing)
+
+## Support
+
+- [Vocalware support](https://www.vocalware.com/support/support)
+- [SitePal support](https://www.sitepal.com/support)
+- [Contact Oddcast](https://www.oddcast.com/contact)
+
+## Legal
+
+- [Terms of Use](https://www.oddcast.com/term-of-use)
+- [Privacy Policy](https://www.oddcast.com/privacy-policy)

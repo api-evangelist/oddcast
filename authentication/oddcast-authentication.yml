@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.vocalware.com/support/reference
+docs: https://www.vocalware.com/support/reference
+summary:
+  types: [apiKey, checksum]
+  api_key_in: [query]
+  notes: >-
+    Oddcast's developer products do not use OAuth. Vocalware authenticates each
+    text-to-speech request with an account identifier plus a secret API key and a
+    per-request checksum (signature) computed over the request parameters, so the
+    secret key is never sent in the clear. SitePal avatars are provisioned to an
+    account and embedded/controlled client-side; server-side account access is via
+    the VHost admin login.
+schemes:
+- name: VocalwareRequestSignature
+  product: Vocalware Text-to-Speech API
+  type: apiKey
+  in: query
+  mechanism: >-
+    Account id (ACC) and API key are issued from the Vocalware account. Each
+    HTTP/REST or JavaScript request carries the account id and a checksum (CS)
+    derived from the request parameters and the secret API key; the secret key
+    itself is not transmitted on the request. Requests are metered per audio
+    stream (one playback instance up to 60 seconds).
+  docs: https://www.vocalware.com/support/reference
+  sources: [searched:https://www.vocalware.com/support/reference]
+- name: SitePalAccount
+  product: SitePal Avatar API
+  type: apiKey
+  in: embed
+  mechanism: >-
+    A SitePal scene is bound to an account id and embedded via the SitePal
+    JavaScript (VHost) API; runtime control (sayText, sayAI, etc.) executes in the
+    browser under that account. Account/admin access is via the VHost login.
+  docs: https://www.sitepal.com/guide
+  login: https://vhost.oddcast.com/admin/index.php
+  sources: [searched:https://www.sitepal.com/guide]

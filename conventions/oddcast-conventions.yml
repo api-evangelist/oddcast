@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.vocalware.com/support/reference
+docs:
+- https://www.vocalware.com/support/reference
+- https://www.vocalware.com/support/javascript
+summary: >-
+  Cross-cutting request/response semantics for Oddcast's developer products.
+  Vocalware is a stateless cloud text-to-speech service offered as an HTTP/REST
+  API (for mobile/standalone/server apps) and a JavaScript/HTML5 API (for
+  in-browser playback). SitePal is delivered as an embeddable JavaScript (VHost)
+  API controlling an avatar at runtime. Neither product documents an
+  idempotency-key contract; TTS requests are stateless and metered per audio
+  stream.
+authentication:
+  style: account-id + secret API key + per-request checksum (Vocalware); account-bound embed (SitePal)
+  detail: authentication/oddcast-authentication.yml
+transport:
+  vocalware_http:
+    protocol: HTTP/REST
+    audience: mobile, server-side, and other standalone (out-of-browser) apps
+    response: audio stream (one stream = one playback instance up to 60 seconds)
+  vocalware_javascript:
+    protocol: JavaScript / HTML5
+    audience: in-browser web applications
+    capabilities: [play, pause, stop, set volume, interruption/queuing, voice effects, playback sync callbacks, close captioning]
+  sitepal_javascript:
+    protocol: JavaScript (VHost) API
+    audience: embedded avatars on web pages and apps
+    detail: components/oddcast-components.yml
+localization:
+  languages: 30+ languages, hundreds of voices (Vocalware)
+idempotency:
+  supported: false
+  notes: No documented idempotency-key header; TTS generation is stateless and metered per stream.
+pagination:
+  supported: false
+  notes: Not applicable; TTS/avatar APIs return media/control results, not paged collections.
+versioning:
+  scheme: unspecified
+  notes: No public dated versioning/deprecation policy located in the developer docs.
+rate_limiting:
+  model: usage-metered (pay-as-you-go per audio stream); streams never expire
+  docs: https://www.vocalware.com/index/pricing
+error_handling:
+  notes: >-
+    Vocalware publishes an API reference (including a downloadable reference
+    document) that documents request errors; error codes were not machine-
+    harvestable from the public HTML at capture time. Not fabricated here.
+  reference: https://www.vocalware.com/support/reference

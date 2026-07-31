@@ -1,8 +1,29 @@
 aid: oddcast
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oddcast.png
 name: Oddcast
-description: Oddcast is a company surfaced as a portfolio company of union-square-ventures and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Oddcast is a New York-based creative media technology company that builds
+  speaking-character, avatar, and text-to-speech products for agencies, brands,
+  business, and education. For developers it operates two API-driven products:
+  Vocalware, a pay-as-you-go cloud text-to-speech service exposed as an HTTP/REST
+  API and a JavaScript/HTML5 API with hundreds of voices across more than thirty
+  languages; and SitePal, an AI avatar platform whose speaking characters are
+  embedded and controlled at runtime through a JavaScript (VHost) API for speech,
+  facial expression, background, and AI-assistant integration. Both products are
+  self-service with free trials, per-stream/per-download pricing, and published
+  developer references.
 url: https://raw.githubusercontent.com/api-evangelist/oddcast/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,15 +33,120 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Text-to-Speech
+- Speech Synthesis
+- Avatars
+- Voice
+- Media
+- Creative Technology
+- Education
+- Developers
+apis:
+- name: Vocalware Text-to-Speech API
+  description: >-
+    Vocalware is Oddcast's cloud text-to-speech service. It exposes a pay-as-you-go
+    HTTP/REST API (suitable for mobile and server-side/standalone apps) and a
+    JavaScript/HTML5 API (for in-browser playback), offering hundreds of voices in
+    over thirty languages. Requests are authenticated with an account id and API
+    key plus a per-request checksum; audio is returned as a playable stream (a
+    stream is one playback instance up to 60 seconds).
+  humanURL: https://www.vocalware.com
+  baseURL: https://www.vocalware.com
+  tags:
+  - Text-to-Speech
+  - Speech Synthesis
+  - Voice
+  - Audio
+  properties:
+  - type: Documentation
+    url: https://www.vocalware.com/support/javascript
+  - type: APIReference
+    url: https://www.vocalware.com/support/reference
+  - type: Support
+    url: https://www.vocalware.com/support/support
+  - type: Pricing
+    url: https://www.vocalware.com/index/pricing
+  - type: SignUp
+    url: https://www.vocalware.com/auth/signup
+  - type: Login
+    url: https://www.vocalware.com/auth/signin
+  - type: Authentication
+    url: authentication/oddcast-authentication.yml
+  - type: Conventions
+    url: conventions/oddcast-conventions.yml
+- name: SitePal Avatar API
+  description: >-
+    SitePal is Oddcast's AI avatar platform. Speaking characters are embedded on a
+    web page or app and controlled at runtime through a JavaScript (VHost) API with
+    methods such as sayText, sayAudio, sayAI, stopSpeech, setStatus,
+    setFacialExpression, and setBackground, plus AI-assistant integration and
+    text-to-speech. Delivered as an embeddable client-side component rather than a
+    server-side REST API.
+  humanURL: https://www.sitepal.com
+  baseURL: https://www.sitepal.com
+  tags:
+  - Avatars
+  - Text-to-Speech
+  - JavaScript
+  - Embeddable
+  properties:
+  - type: Documentation
+    url: https://www.sitepal.com/guide
+  - type: GettingStarted
+    url: https://www.sitepal.com/guide
+  - type: Support
+    url: https://www.sitepal.com/support
+  - type: Pricing
+    url: https://www.sitepal.com/pricing
+  - type: SignUp
+    url: https://www.sitepal.com/pricing
+  - type: Login
+    url: https://vhost.oddcast.com/admin/index.php
+  - type: Components
+    url: components/oddcast-components.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1
 common:
 - type: Website
   url: https://oddcast.com
+- type: DeveloperPortal
+  url: https://www.vocalware.com
+- type: Documentation
+  url: https://www.vocalware.com/support/javascript
+- type: APIReference
+  url: https://www.vocalware.com/support/reference
+- type: GettingStarted
+  url: https://www.sitepal.com/guide
+- type: Support
+  url: https://www.vocalware.com/support/support
+- type: Pricing
+  url: https://www.vocalware.com/index/pricing
+- type: SignUp
+  url: https://www.vocalware.com/auth/signup
+- type: Login
+  url: https://www.vocalware.com/auth/signin
+- type: TermsOfService
+  url: https://www.oddcast.com/term-of-use
+- type: PrivacyPolicy
+  url: https://www.oddcast.com/privacy-policy
+- type: Authentication
+  url: authentication/oddcast-authentication.yml
+- type: Conventions
+  url: conventions/oddcast-conventions.yml
+- type: Components
+  url: components/oddcast-components.yml
+- type: LLMsTxt
+  url: llms/oddcast-llms.txt
+- type: DomainSecurity
+  url: security/oddcast-domain-security.yml

@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.sitepal.com/guide
+docs: https://www.sitepal.com/guide
+summary: >-
+  SitePal ships an embeddable, client-side avatar surface controlled through a
+  JavaScript (VHost) API rather than a server-side SDK. A scene is generated in
+  the SitePal editor and published as embed code (standard JavaScript embed, a
+  no-JavaScript variant for JS-restricted platforms such as some LMS, and a
+  responsive embed that auto-scales). Once embedded, the avatar is driven at
+  runtime by JavaScript API methods.
+families:
+- name: SitePal Avatar (VHost) JavaScript API
+  product: SitePal Avatar API
+  kind: embeddable-avatar
+  embed_modes:
+  - standard-javascript
+  - no-javascript
+  - responsive
+  publish: SitePal editor "Publish" section provides the embed code
+  methods:
+  - name: sayText
+    description: Speak supplied text via text-to-speech.
+  - name: sayAudio
+    description: Play a pre-existing audio asset through the avatar.
+  - name: sayAI
+    description: Trigger an AI-assistant powered spoken response.
+  - name: stopSpeech
+    description: Stop current speech/audio playback.
+  - name: setStatus
+    description: Update the avatar's state.
+  - name: setFacialExpression
+    description: Control the avatar's facial animation/expression.
+  - name: setBackground
+    description: Change the scene background.
+  examples: https://www.sitepal.com/api/examples/
+  reference: SitePal API Reference (PDF) and "Using The TTS API" (PDF), linked from the guide
